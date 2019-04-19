@@ -5,6 +5,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GridListComponent } from './grid-list/grid-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { GridListComponent } from './grid-list/grid-list.component';
     BrowserModule,
     AppRoutingModule,
     MatGridListModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
