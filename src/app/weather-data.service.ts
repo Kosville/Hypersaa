@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class WeatherDataService {
   baseUrl:string = "http://api.openweathermap.org/data/2.5/";
   appId:string ="&APPID=8b3f57166494afb2451296e6f254bed1";
+  
 
 
   constructor(private httpClient : HttpClient) { }

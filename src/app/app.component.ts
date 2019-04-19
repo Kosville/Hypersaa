@@ -1,8 +1,9 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RootObject, Clouds, Coord, WeatherItem, Wind, Sys, Main } from './weather';
 import { AppData } from './AppData';
 import { WeatherDataService } from './weather-data.service';
+import { CurWeatherComponent } from './cur-weather/cur-weather.component';
 
 @Component({
   selector: 'app-root',
@@ -11,41 +12,16 @@ import { WeatherDataService } from './weather-data.service';
 })
 export class AppComponent implements OnInit{
   title = 'hypersaa';
-  Cloud: Clouds;
-  Coords: Coord;
-  weather: WeatherItem;
-  winds: Wind;
-  system: Sys;
-  mains: Main;
-  CurrentW;
-  Root: RootObject;
-  weatherImgUrl;
-  temperature;
-  WeatherObservable: Observable<any[]>;
   city : string='Helsinki';
-  loaded: boolean = false;
-  lastCity:string = '';
+  lastCity:string = 'Helsinki';
 
-  constructor(private dataService: WeatherDataService) {
+  constructor( ) {
   }
-
-  getPosts(): void {
-    this.dataService.getCurrent(this.city).subscribe((res: any) => {
-      this.Root = res;
-      this.Cloud = res.clouds;
-      this.Coords = res.coord;
-      this.weather = res.weather[0];
-      this.winds = res.wind;
-      this.mains = res.main;
-      this.system = res.sys;
-      this.temperature=Math.round(this.mains.temp-272);
-      this.loaded=true;
-      this.lastCity = this.city;
-      console.log("getPosts called with city: " + this.city)
-    });  
+  callGetPosts(city):void{
+    this.lastCity=city;
   }
 
   ngOnInit(): void {
-    this.getPosts();
+  
   }
 }

@@ -1,7 +1,7 @@
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 .jumbotron{
   background-color: darkseagreen;
-  
+
 
 }

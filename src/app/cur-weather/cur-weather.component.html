@@ -1,0 +1,8 @@
+<div class="card">
+    <img *ngIf="loaded; else placeholder" src="http://openweathermap.org/img/w/{{weather.icon}}.png" class="card-img-top">
+  <div *ngIf="loaded; else loading" class="card-body">
+    <h5 class="card-title">{{Root.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{weather.description}}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">{{temperature}}C</h6>
+  </div>
+</div>

@@ -7,11 +7,15 @@ import { AppComponent } from './app.component';
 import { GridListComponent } from './grid-list/grid-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CurWeatherComponent } from './cur-weather/cur-weather.component';
+import { ForecastComponent } from './forecast/forecast.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GridListComponent
+    GridListComponent,
+    CurWeatherComponent,
+    ForecastComponent
   ],
   imports: [
     MatToolbarModule,
